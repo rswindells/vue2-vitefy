@@ -1,61 +1,61 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import logoSvgUrl from "@/assets/logo.svg";
+import { ref } from 'vue'
+import logoSvgUrl from '@/assets/logo.svg'
 
 defineProps<{
-  msg: string;
-}>();
+  msg: string
+}>()
 
 const ecosystem = ref([
   {
-    text: "vuetify-loader",
-    href: "https://github.com/vuetifyjs/vuetify-loader",
+    text: 'vuetify-loader',
+    href: 'https://github.com/vuetifyjs/vuetify-loader'
   },
   {
-    text: "github",
-    href: "https://github.com/vuetifyjs/vuetify",
+    text: 'github',
+    href: 'https://github.com/vuetifyjs/vuetify'
   },
   {
-    text: "awesome-vuetify",
-    href: "https://github.com/vuetifyjs/awesome-vuetify",
-  },
-]);
+    text: 'awesome-vuetify',
+    href: 'https://github.com/vuetifyjs/awesome-vuetify'
+  }
+])
 const importantLinks = ref([
   {
-    text: "Documentation",
-    href: "https://vuetifyjs.com",
+    text: 'Documentation',
+    href: 'https://vuetifyjs.com'
   },
   {
-    text: "Chat",
-    href: "https://community.vuetifyjs.com",
+    text: 'Chat',
+    href: 'https://community.vuetifyjs.com'
   },
   {
-    text: "Made with Vuetify",
-    href: "https://madewithvuejs.com/vuetify",
+    text: 'Made with Vuetify',
+    href: 'https://madewithvuejs.com/vuetify'
   },
   {
-    text: "Twitter",
-    href: "https://twitter.com/vuetifyjs",
+    text: 'Twitter',
+    href: 'https://twitter.com/vuetifyjs'
   },
   {
-    text: "Articles",
-    href: "https://medium.com/vuetify",
-  },
-]);
+    text: 'Articles',
+    href: 'https://medium.com/vuetify'
+  }
+])
 const whatsNext = ref([
   {
-    text: "Explore components",
-    href: "https://vuetifyjs.com/components/api-explorer",
+    text: 'Explore components',
+    href: 'https://vuetifyjs.com/components/api-explorer'
   },
   {
-    text: "Select a layout",
-    href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
+    text: 'Select a layout',
+    href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
   },
   {
-    text: "Frequently Asked Questions",
-    href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
-  },
-]);
+    text: 'Frequently Asked Questions',
+    href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
+  }
+])
 </script>
 
 <template>
@@ -71,9 +71,7 @@ const whatsNext = ref([
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
+          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
         </p>
       </v-col>
 
@@ -81,13 +79,7 @@ const whatsNext = ref([
         <h2 class="headline font-weight-bold mb-3">What's next?</h2>
 
         <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
+          <a v-for="(next, i) in whatsNext" :key="i" :href="next.href" class="subheading mx-3" target="_blank">
             {{ next.text }}
           </a>
         </v-row>
@@ -97,13 +89,7 @@ const whatsNext = ref([
         <h2 class="headline font-weight-bold mb-3">Important Links</h2>
 
         <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
+          <a v-for="(link, i) in importantLinks" :key="i" :href="link.href" class="subheading mx-3" target="_blank">
             {{ link.text }}
           </a>
         </v-row>
@@ -113,13 +99,7 @@ const whatsNext = ref([
         <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
 
         <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
+          <a v-for="(eco, i) in ecosystem" :key="i" :href="eco.href" class="subheading mx-3" target="_blank">
             {{ eco.text }}
           </a>
         </v-row>
