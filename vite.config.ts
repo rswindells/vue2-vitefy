@@ -28,6 +28,7 @@ export default defineConfig({
     }
   },
   server: {
+    host: true, // needed for docker
     port: 8080
   }
 })
