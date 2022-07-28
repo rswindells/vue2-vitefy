@@ -15,7 +15,8 @@ export default defineConfig({
     vue2(),
     vue2Jsx(),
     legacy({
-      targets: ['ie >= 11'],
+      // targets: ['ie >= 11'],
+      targets: ['> 1%', 'last 2 versions', 'not dead'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime']
     }),
     Components({

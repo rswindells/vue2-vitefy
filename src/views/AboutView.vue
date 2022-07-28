@@ -1,5 +1,52 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { mapState, mapActions } from 'pinia'
+import { useCounterStore } from '@/stores/counter'
+
+export default defineComponent({
+  data: (): {
+    msg: string
+    counterMsg: string
+  } => ({
+    msg: 'This is an about page',
+    counterMsg: 'Counter value is: '
+  }),
+  computed: {
+    ...mapState(useCounterStore, {
+      doubleCounter: store => store.counter * 2
+    }),
+    compCounterMsg(): string {
+      return this.counterMsg + this.doubleCounter
+    }
+  },
+  methods: {
+    ...mapActions(useCounterStore, ['increment'])
+  }
+})
+</script>
+
+<style lang="scss" scoped></style>
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <v-container class="about">
+    <v-row>
+      <v-col>
+        <h1>{{ msg }}</h1>
+        <p>{{ doubleCounter }}</p>
+        <p>{{ compCounterMsg }}</p>
+        <v-btn color="secondary" @click="increment">INCREMENT ME</v-btn>
+        <v-btn class="ma-2" color="primary" dark>
+          Accept
+          <v-icon dark right> mdi-checkbox-marked-circle </v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
+<style lang="scss">
+.about {
+  h1 {
+    color: crimson;
+  }
+}
+</style>
