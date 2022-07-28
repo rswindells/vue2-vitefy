@@ -1,5 +1,5 @@
 {
-  "files": [],
+  "files": ["src/typings/ts-shim.d.ts"],
   "references": [
     {
       "path": "./tsconfig.config.json"
