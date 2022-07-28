@@ -25,7 +25,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
 <template>
   <v-container class="about">
     <v-row>
