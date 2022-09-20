@@ -70,10 +70,11 @@ const whatsNext = ref([
         <h2 class="display-1 font-weight-bold mb-3">{{ msg }}</h2>
 
         <p class="subheading font-weight-regular">
-          For help and collaborationnnn with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
+          Everything looking off? That's because we have disabled the default vuetify utility classes in /scss/overrides
         </p>
+        <v-row justify="center">
+          <v-btn to="/about" color="secondary">Router test</v-btn>
+        </v-row>
       </v-col>
 
       <v-col class="mb-5" cols="12">

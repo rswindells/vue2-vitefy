@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+// ^^ Required for using vitest config within vite config (or create separate file)
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
@@ -11,6 +13,17 @@ import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      sass: {
+        additionalData: [
+          '@import "./src/assets/scss/overrides"',
+          '@import "vuetify/src/styles/settings/_variables"',
+          '' // end with newline
+        ].join('\n')
+      }
+    }
+  },
   plugins: [
     vue2(),
     vue2Jsx(),
@@ -27,6 +40,12 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  test: {
+    deps: {
+      inline: ['vuetify']
+    },
+    setupFiles: ['./src/components/__tests__/vitest.setup.ts']
   },
   server: {
     host: true, // needed for docker
