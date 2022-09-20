@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
+  <v-app dark>
+    <v-app-bar app color="primary" light>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"

@@ -33,8 +33,8 @@ export default defineComponent({
         <p>{{ doubleCounter }}</p>
         <p>{{ compCounterMsg }}</p>
         <v-btn color="secondary" @click="increment">INCREMENT ME</v-btn>
-        <v-btn class="ma-2" color="primary" dark>
-          Accept
+        <v-btn class="ma-2 primary--text" color="accent">
+          Test Colours
           <v-icon dark right> mdi-checkbox-marked-circle </v-icon>
         </v-btn>
       </v-col>
@@ -45,7 +45,7 @@ export default defineComponent({
 <style lang="scss">
 .about {
   h1 {
-    color: crimson;
+    color: white;
   }
 }
 </style>

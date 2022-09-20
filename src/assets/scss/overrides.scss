@@ -1,0 +1,19 @@
+/* To remove additional colors and util classes */
+$color-pack: false;
+@import 'vuetify/src/styles/styles.sass';
+@each $name, $value in $utilities {
+  $utilities: map-merge(
+    $utilities,
+    (
+      $name: false
+    )
+  );
+}
+
+/* Override vuetify scss variables */
+// $body-font-family: Helvetica, sans-serif;
+
+/* Disable specific utils */
+/* $utilities: (
+  margin: false,
+); */
